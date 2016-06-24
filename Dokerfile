@@ -1,0 +1,17 @@
+FROM ubuntu
+
+MAINTAINER Bertrand Néron <bneron@pasteur.fr>
+
+RUN apt-get -y update
+RUN apt-get install -y ansible unzip python-pip
+
+WORKDIR /tmp/
+RUN wget https://github.com/C3BI-pasteur-fr/IFB-playbook/archive/coregenbuilder.zip && \
+    unzip coregenbuilder.zip
+
+WORKDIR /tmp/IFB-playbook-coregenbuilder/coregenbuilder
+ADD inventory /tmp/IFB-playbook-coregenbuilder/coregenbuilder/Inventory/hosts
+ADD opscan_src_files.tar.gz /tmp/IFB-playbook-coregenbuilder/coregenbuilder/roles/coregenbuilder/files/opscan_src_files.tar.gz
+ADD coregenbuilder.tar.gz /tmp/IFB-playbook-coregenbuilder/coregenbuilder/roles/coregenbuilder/files/coregenbuilder.tar.gz
+
+RUN ansible-playbook coregenbuilder.yml -i Inventory/ -c local
