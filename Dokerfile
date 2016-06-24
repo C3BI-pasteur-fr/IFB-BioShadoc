@@ -24,3 +24,5 @@ ADD opscan_src_files.tar.gz /tmp/IFB-playbook-coregenbuilder/coregenbuilder/role
 ADD coregenbuilder.tar.gz /tmp/IFB-playbook-coregenbuilder/coregenbuilder/roles/coregenbuilder/files/coregenbuilder.tar.gz
 
 RUN ansible-playbook coregenbuilder.yml -i Inventory/ -c local
+
+ENTRYPOINT [“/usr/loca/bin/run_cg_pipeline.sh"]
