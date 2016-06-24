@@ -2,6 +2,15 @@ FROM ubuntu
 
 MAINTAINER Bertrand Néron <bneron@pasteur.fr>
 
+LABEL ANNOT.Name="CoreGenBuilder" \
+      ANNOT.Version="1.0" \
+      ANNOT.Description="TODO"
+      ANNOT.Vendor="Institut Pasteur" \
+      ANNOT.EDAM_Operation="operation_2241 operation_0269 operation_0270" \
+      ANNOT.EDAM_Topic="" \
+      ANNOT.Requires="[]" \
+      ANNOT.Provides="['run_cg_pipeline.sh']"
+      
 RUN apt-get -y update
 RUN apt-get install -y ansible unzip python-pip
 
