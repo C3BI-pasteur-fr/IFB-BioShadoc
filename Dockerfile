@@ -19,9 +19,9 @@ RUN wget https://github.com/C3BI-pasteur-fr/IFB-playbook/archive/coregenbuilder.
     unzip coregenbuilder.zip
 
 WORKDIR /tmp/IFB-playbook-coregenbuilder/coregenbuilder
-ADD inventory /tmp/IFB-playbook-coregenbuilder/coregenbuilder/Inventory/hosts
-ADD opscan_src_files.tar.gz /tmp/IFB-playbook-coregenbuilder/coregenbuilder/roles/coregenbuilder/files/opscan_src_files.tar.gz
-ADD coregenbuilder.tar.gz /tmp/IFB-playbook-coregenbuilder/coregenbuilder/roles/coregenbuilder/files/coregenbuilder.tar.gz
+COPY inventory /tmp/IFB-playbook-coregenbuilder/coregenbuilder/Inventory/hosts
+COPY opscan_src_files.tar.gz /tmp/IFB-playbook-coregenbuilder/coregenbuilder/roles/coregenbuilder/files/opscan_src_files.tar.gz
+COPY coregenbuilder.tar.gz /tmp/IFB-playbook-coregenbuilder/coregenbuilder/roles/coregenbuilder/files/coregenbuilder.tar.gz
 
 RUN ansible-playbook coregenbuilder.yml -i Inventory/ -c local
 
