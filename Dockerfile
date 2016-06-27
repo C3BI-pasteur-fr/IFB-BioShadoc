@@ -4,7 +4,7 @@ MAINTAINER Bertrand Néron <bneron@pasteur.fr>
 
 LABEL ANNOT.Name="CoreGenBuilder" \
       ANNOT.Version="1.0" \
-      ANNOT.Description="TODO"
+      ANNOT.Description="TODO" \
       ANNOT.Vendor="Institut Pasteur" \
       ANNOT.EDAM_Operation="operation_XXXX operation_XXXX operation_XXXX" \
       ANNOT.EDAM_Topic="" \
