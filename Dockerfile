@@ -25,4 +25,4 @@ COPY coregenbuilder.tar.gz /tmp/IFB-playbook-coregenbuilder/coregenbuilder/roles
 
 RUN ansible-playbook coregenbuilder.yml -i Inventory/ -c local
 
-ENTRYPOINT ['/usr/local/bin/run_cg_pipeline.sh']
+ENTRYPOINT ["/usr/local/bin/run_cg_pipeline.sh"]
