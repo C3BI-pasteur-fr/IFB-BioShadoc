@@ -12,7 +12,7 @@ LABEL ANNOT.Name="CoreGenBuilder" \
       ANNOT.Provides="['run_cg_pipeline.sh']"
       
 RUN apt-get -y update && \
-    apt-get install -y ansible unzip python-pip wget
+    apt-get install -y ansible unzip python-pip wget time bc
 
 WORKDIR /tmp/
 RUN wget https://github.com/C3BI-pasteur-fr/IFB-playbook/archive/coregenbuilder.zip && \
