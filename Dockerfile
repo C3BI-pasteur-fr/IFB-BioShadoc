@@ -12,7 +12,7 @@ LABEL ANNOT.Name="CoreGenBuilder" \
       ANNOT.Provides="['run_cg_pipeline.sh']"
       
 RUN apt-get -y update && \
-    apt-get install -y ansible unzip python-pip wget time bc gawk openjdk-9-jre
+    apt-get install -y ansible unzip python-pip wget time bc gawk
 
 WORKDIR /tmp/
 RUN wget https://github.com/C3BI-pasteur-fr/IFB-playbook/archive/coregenbuilder.zip && \
@@ -20,8 +20,6 @@ RUN wget https://github.com/C3BI-pasteur-fr/IFB-playbook/archive/coregenbuilder.
 
 WORKDIR /tmp/IFB-playbook-coregenbuilder/coregenbuilder
 COPY inventory /tmp/IFB-playbook-coregenbuilder/coregenbuilder/Inventory/hosts
-COPY opscan /tmp/IFB-playbook-coregenbuilder/coregenbuilder/roles/coregenbuilder/files/opscan
-COPY BLOSUM60 /tmp/IFB-playbook-coregenbuilder/coregenbuilder/roles/coregenbuilder/files/BLOSUM60
 COPY coregenbuilder.tar.gz /tmp/IFB-playbook-coregenbuilder/coregenbuilder/roles/coregenbuilder/files/coregenbuilder.tar.gz
 
 RUN ansible-playbook coregenbuilder.yml -i Inventory/ -c local
