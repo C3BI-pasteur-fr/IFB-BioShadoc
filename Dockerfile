@@ -28,3 +28,5 @@ RUN ansible-playbook coregenbuilder.yml -i Inventory/ -c local
 RUN mkdir -p /root/mydisk
 
 ENTRYPOINT ["/usr/local/bin/coregenebuilder"]
+
+CMD ["-h"]
