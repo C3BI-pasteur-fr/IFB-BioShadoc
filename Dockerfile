@@ -2,14 +2,14 @@ FROM ubuntu
 
 MAINTAINER Bertrand Néron <bneron@pasteur.fr>
 
-LABEL ANNOT.Name="CoreGenBuilder" \
+LABEL ANNOT.Name="CoreGeneBuilder" \
       ANNOT.Version="1.0" \
       ANNOT.Description="TODO" \
       ANNOT.Vendor="Institut Pasteur" \
       ANNOT.EDAM_Operation="operation_XXXX operation_XXXX operation_XXXX" \
       ANNOT.EDAM_Topic="" \
       ANNOT.Requires="[]" \
-      ANNOT.Provides="['run_cg_pipeline.sh']"
+      ANNOT.Provides="['coregenebuilder']"
       
 RUN apt-get -y update && \
     apt-get install -y ansible unzip python-pip wget time bc gawk openjdk-9-jre libgcj16
