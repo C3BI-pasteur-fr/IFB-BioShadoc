@@ -4,10 +4,10 @@ MAINTAINER Bertrand Néron <bneron@pasteur.fr>
 
 LABEL ANNOT.Name="CoreGeneBuilder" \
       ANNOT.Version="1.0" \
-      ANNOT.Description="TODO" \
+      ANNOT.Description="CoreGenBuilder is a pipeline for building a core genome from a set of bacterial genomes" \
       ANNOT.Vendor="Institut Pasteur" \
-      ANNOT.EDAM_Operation="operation_XXXX operation_XXXX operation_XXXX" \
-      ANNOT.EDAM_Topic="" \
+      ANNOT.EDAM_Operation="['operation_2995', 'operation_0289', 'operation_0362', 'operation_0291']" \
+      ANNOT.EDAM_Topic="['topic_0623']" \
       ANNOT.Requires="[]" \
       ANNOT.Provides="['coregenebuilder']"
       
