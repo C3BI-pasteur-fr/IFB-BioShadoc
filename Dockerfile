@@ -12,7 +12,7 @@ LABEL ANNOT.Name="CoreGenBuilder" \
       ANNOT.Provides="['run_cg_pipeline.sh']"
       
 RUN apt-get -y update && \
-    apt-get install -y ansible unzip python-pip wget time bc gawk openjdk-9-jre
+    apt-get install -y ansible unzip python-pip wget time bc gawk openjdk-9-jre libgcj16
 
 WORKDIR /tmp/
 RUN wget https://github.com/C3BI-pasteur-fr/IFB-playbook/archive/coregenbuilder.zip && \
@@ -27,4 +27,4 @@ RUN ansible-playbook coregenbuilder.yml -i Inventory/ -c local
 
 RUN mkdir -p /root/mydisk
 
-ENTRYPOINT ["/usr/local/bin/run_cg_pipeline.sh"]
+ENTRYPOINT ["/usr/local/bin/coregenebuilder"]
