@@ -2,4 +2,4 @@
 localhost
 
 [ifb:vars]
-CGB_CONFIG_PATH=/etc/coregenbuilder/
+CGB_CONFIG_PATH=/etc/coregenebuilder/
