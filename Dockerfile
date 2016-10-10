@@ -22,7 +22,7 @@ WORKDIR /tmp/IFB-playbook-coregenbuilder/coregenbuilder
 COPY inventory /tmp/IFB-playbook-coregenbuilder/coregenbuilder/Inventory/hosts
 COPY coregenebuilder.tar.gz /tmp/IFB-playbook-coregenbuilder/coregenbuilder/roles/coregenbuilder/files/coregenebuilder.tar.gz
 
-RUN ansible-playbook coregenbuilder.yml -i Inventory/ -c local
+RUN ansible-playbook coregenebuilder.yml -i Inventory/ -c local
 
 RUN mkdir -p /root/mydisk
 
