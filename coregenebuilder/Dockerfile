@@ -15,10 +15,10 @@ RUN apt-get -y update && \
     apt-get install -y ansible unzip python-pip wget time bc gawk openjdk-9-jre libgcj16
 
 WORKDIR /tmp/
-RUN wget https://github.com/C3BI-pasteur-fr/IFB-playbook/archive/coregenbuilder.zip && \
-    unzip coregenbuilder.zip
+RUN wget https://github.com/C3BI-pasteur-fr/IFB-playbook/archive/coregenebuilder.zip && \
+    unzip coregenebuilder.zip
 
-WORKDIR /tmp/IFB-playbook-coregenbuilder/coregenebuilder
+WORKDIR /tmp/IFB-playbook-coregenebuilder/coregenebuilder
 COPY inventory /tmp/IFB-playbook-coregenbuilder/coregenebuilder/Inventory/hosts
 
 RUN ansible-playbook coregenebuilder.yml -i Inventory/ -c local
