@@ -19,7 +19,7 @@ RUN wget https://github.com/C3BI-pasteur-fr/IFB-playbook/archive/coregenebuilder
     unzip coregenebuilder.zip
 
 WORKDIR /tmp/IFB-playbook-coregenebuilder/coregenebuilder
-COPY inventory /tmp/IFB-playbook-coregenbuilder/coregenebuilder/Inventory/hosts
+COPY inventory /tmp/IFB-playbook-coregenebuilder/coregenebuilder/Inventory/hosts
 
 RUN ansible-playbook coregenebuilder.yml -i Inventory/ -c local
 
