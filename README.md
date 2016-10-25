@@ -1,2 +1,2 @@
-# IFB-BioShadoc
+# IFB-BioShadock
 host Dockerfiles for Bioshadock
