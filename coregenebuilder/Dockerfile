@@ -35,7 +35,7 @@ RUN ansible-playbook coregenebuilder.yml -i Inventory/ -c local \
     && mkdir -p /root/mydisk \
     && apt-get autoremove \
     && apt-get clean \
-    && rm -r /var/lib/apt/lists /tmp /var/tmp /usr/local/share/coregenebuilder/data
+    && rm -r /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/local/share/coregenebuilder/data
 
 ENTRYPOINT ["/usr/local/bin/coregenebuilder"]
 
