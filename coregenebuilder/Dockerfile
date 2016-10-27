@@ -8,7 +8,7 @@ LABEL ANNOT.Name="CoreGeneBuilder" \
       ANNOT.Vendor="Institut Pasteur" \
       ANNOT.EDAM_Operation="['operation_2995', 'operation_0289', 'operation_0362', 'operation_0291']" \
       ANNOT.EDAM_Topic="['topic_0623']" \
-      ANNOT.Requires="[]" \
+      ANNOT.Requires="[blast+, muscle, biopython , R, prodigal, andi, ecamber, opscan, fasta2agp]" \
       ANNOT.Provides="['coregenebuilder']"
       
 RUN apt-get -y update && \
