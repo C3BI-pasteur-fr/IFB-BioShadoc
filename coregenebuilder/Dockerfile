@@ -11,16 +11,17 @@ LABEL ANNOT.Name="CoreGeneBuilder" \
       ANNOT.Requires="[]" \
       ANNOT.Provides="['coregenebuilder']"
       
-RUN apt-get -y update \
-    && apt-get install -y --no-install-recommends \
+RUN apt-get -y update && \
+    apt-get install -y --no-install-recommends \
               ansible \
               unzip \
               wget \
               time \
               bc \
               gawk \
-              libgcj16 \
-    && apt-get install -y python-pip
+              libgcj16 && \
+    apt-get install -y python-pip && \
+    apt-get clean
 
 WORKDIR /tmp
 
