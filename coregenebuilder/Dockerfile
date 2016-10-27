@@ -11,19 +11,31 @@ LABEL ANNOT.Name="CoreGeneBuilder" \
       ANNOT.Requires="[]" \
       ANNOT.Provides="['coregenebuilder']"
       
-RUN apt-get -y update && \
-    apt-get install -y ansible unzip python-pip wget time bc gawk openjdk-9-jre libgcj16
+RUN apt-get -y update \
+    && apt-get install -y --no-install-recommends \
+              ansible \
+              unzip \
+              wget \
+              time \
+              bc \
+              gawk \
+              libgcj16 \
+    && apt-get install -y python-pip
 
-WORKDIR /tmp/
-RUN wget https://github.com/C3BI-pasteur-fr/IFB-playbook/archive/coregenebuilder.zip && \
-    unzip coregenebuilder.zip
+WORKDIR /tmp
+
+RUN wget https://github.com/C3BI-pasteur-fr/IFB-playbook/archive/coregenebuilder.zip \
+    && unzip coregenebuilder.zip
 
 WORKDIR /tmp/IFB-playbook-coregenebuilder/coregenebuilder
+
 COPY inventory /tmp/IFB-playbook-coregenebuilder/coregenebuilder/Inventory/hosts
 
-RUN ansible-playbook coregenebuilder.yml -i Inventory/ -c local
-
-RUN mkdir -p /root/mydisk
+RUN ansible-playbook coregenebuilder.yml -i Inventory/ -c local \
+    && mkdir -p /root/mydisk \
+    && apt-get autoremove \
+    && apt-get clean \
+    && rm -r /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/local/share/coregenebuilder/data
 
 ENTRYPOINT ["/usr/local/bin/coregenebuilder"]
 
