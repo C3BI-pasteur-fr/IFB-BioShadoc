@@ -16,14 +16,14 @@ RUN apt-get -y update && \
     apt-get install -y python-pip && \
     apt-get clean
 
-RUN pip install integron_finder==1.5.1
+RUN pip install numpy matplotlib pandas biopython 
+RUN pip install --index-url https://testpypi.python.org/pypi integron_finder==1.5.1rc1
 
-RUN useradd -m -U if -G users && \
-    chmod 755 /root
-
-WORKDIR /root/mydisk
+RUN useradd -m -U if -G users
 
 USER if
+
+WORKDIR /home/if
 
 ENTRYPOINT ["integron_finder"]
 
