@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:16.04
 
 MAINTAINER Bertrand Néron <bneron@pasteur.fr>
 
