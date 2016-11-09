@@ -5,7 +5,7 @@ MAINTAINER Bertrand Néron <bneron@pasteur.fr>
 LABEL ANNOT.Name="CoreGeneBuilder" \
       ANNOT.Version="1.0" \
       ANNOT.Description="CoreGeneBuilder can be used to extract a core genome (or a persistent genome) from a given set of bacterial genomes." \
-      ANNOT.Homepage="hhttps://github.com/C3BI-pasteur-fr/CoreGeneBuilder" \
+      ANNOT.Homepage="https://github.com/C3BI-pasteur-fr/CoreGeneBuilder" \
       ANNOT.Vendor="Institut Pasteur" \
       ANNOT.EDAM_Operation="['operation_2995', 'operation_0289', 'operation_0362', 'operation_0291']" \
       ANNOT.EDAM_Topic="['topic_0623']" \
