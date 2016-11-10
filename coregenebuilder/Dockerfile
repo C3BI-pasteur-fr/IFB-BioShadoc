@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER Bertrand Néron <bneron@pasteur.fr>
+MAINTAINER Bertrand Neron <bneron@pasteur.fr>
 
 LABEL ANNOT.Name="CoreGeneBuilder" \
       ANNOT.Version="1.0" \
