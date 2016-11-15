@@ -8,16 +8,17 @@ LABEL ANNOT.Name="Integron_Finder" \
       ANNOT.Vendor="Institut Pasteur" \
       ANNOT.EDAM_Operation="['operation_0361', 'operation_0362', 'operation_0239', 'operation_2423', 'operation_0253', 'operation_3087', 'operation_0415']" \
       ANNOT.EDAM_Topic="['topic_0160', 'topic_0160', 'topic_0080', 'topic_3073', 'topic_3053', 'topic_3053', 'topic_0114', 'topic_0798']" \
-      ANNOT.Requires="['Prodigal'l', 'infernal', 'hmmer', 'numpy', 'matplotlib', 'pandas' 'biopython']" \
+      ANNOT.Requires="['Prodigall 2.6.2', 'infernal 1.1.1', 'hmmer 3.1b2', 'numpy 1.11.0', 'matplotlib 1.5.1', 'biopython 1.66']" \
       ANNOT.Provides="['integron_finder']"
       
 RUN apt-get -y update && \
     apt-get install -y --no-install-recommends prodigal infernal hmmer && \
-    apt-get install -y python-pip && \
+    apt-get install -y python-pip python-numpy python-matplotlib python-biopython && \
     apt-get clean
 
-RUN pip install numpy matplotlib pandas biopython 
-RUN pip install --index-url https://testpypi.python.org/pypi integron_finder==1.5.1rc1
+# It will install pandas too
+# I don't use pandas package because the version is too old 0.17
+RUN pip install integron_finder
 
 RUN useradd -m -U if -G users
 
